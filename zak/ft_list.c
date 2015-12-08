@@ -6,7 +6,7 @@
 /*   By: zkerkeb <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 20:17:16 by zkerkeb           #+#    #+#             */
-/*   Updated: 2015/12/07 22:49:24 by zkerkeb          ###   ########.fr       */
+/*   Updated: 2015/12/08 16:23:20 by zkerkeb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,14 @@ int ft_first_link(char *str)
 		i++;
 		printf("%s", list->content);
 		list->right = ft_lstnew((const char *)&str[i], 1);
-		list = list->right;
+		if(list->right != NULL)
+			list = list->right;
 		list->left = tmp;
 		tmp = list->right;
 		v++;
 	}
 		list = list->left;
-		printf("s");
+		printf("%s", list->content);
 	//	printf("%s", list->content);	
 	
 

@@ -6,7 +6,7 @@
 /*   By: zkerkeb <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 15:05:16 by zkerkeb           #+#    #+#             */
-/*   Updated: 2015/12/07 18:11:41 by zkerkeb          ###   ########.fr       */
+/*   Updated: 2015/12/08 21:08:08 by zkerkeb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int main(int argc, char **argv)
 	tetris = (char *)malloc(sizeof(char *) * (ft_read(fd, buf) + 1));
 	fd = open(argv[1], O_RDONLY); 
 	tetris = ft_write(fd, buf, tetris);
-	printf("%s",tetris);
+//	printf("%s",tetris);
+	ft_try(tetris, 0, 0);	
 	return(0);
 }
