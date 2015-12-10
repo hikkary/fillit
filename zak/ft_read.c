@@ -6,7 +6,7 @@
 /*   By: zkerkeb <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 15:05:16 by zkerkeb           #+#    #+#             */
-/*   Updated: 2015/12/10 20:28:03 by zkerkeb          ###   ########.fr       */
+/*   Updated: 2015/12/10 21:47:25 by zkerkeb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,14 +77,20 @@ int main(int argc, char **argv)
 //	printf("%s",tetris);
 	//printf("%d",ft_try(tetris, 0, 0));
 	nt = nt / 21;
-	printf("%d", nt);
+//	printf("%d", nt);
 	piece = (char ***)malloc(sizeof(char **) * (nt + 1));
 	piece = ft_split(tetris, piece, nt);
+	printf("%d", nt);
 
-/*	while(piece)
+	while(piece)
 	{
 		printf("%s", piece[h][i]);
 		i++;
-	}*/
+		if(i == 4)
+		{
+			i = 0;
+			h++;
+		}
+	}
 	return(0);
 }

@@ -6,7 +6,7 @@
 /*   By: zkerkeb <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 21:06:20 by zkerkeb           #+#    #+#             */
-/*   Updated: 2015/12/10 20:52:58 by zkerkeb          ###   ########.fr       */
+/*   Updated: 2015/12/10 22:05:57 by zkerkeb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ char ***cara_malloc(char ***tab, int nt)
 	h = 0;
 	while(i <= (nt * 4))
 	{
-		tab[s][h] = (char *)malloc(sizeof(char) * 4);
-		printf("%d",h);
+		tab[s][h] = (char *)malloc(sizeof(char) * 5);
+		printf("%d/%d/%d  ", s,h, i);
 		i++;
 		h++;
 		if (i % 4 == 0)
@@ -70,21 +70,19 @@ char ***ft_split(char *str, char ***tab, int nt)
 
 	tab = l_malloc(tab, nt);
 	tab = cara_malloc(tab, nt);
-		
+	
 	while (str[i] != '\0')
 	{
 		tab[s][h][v] = str[i];
 		v++;
 		i++;
-		printf("s");
+	//	printf("c", *tab[h][v]);
 		if (v == 3)
 		{
-			h++;
 			v = 0;
 		}
 		if (h == 3)
 		{
-			s++;
 			h = 0;
 		}
 	}
