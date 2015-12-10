@@ -22,4 +22,5 @@ int ft_first_link(char *str);
 void *ft_memcpy(void *dest, const void *src, size_t n);
 int	ft_try(char *str, int i, int l);
 void	ft_putstr(char const *s);
+char ***ft_split(char *str, char ***tab, int nt);
 #endif
