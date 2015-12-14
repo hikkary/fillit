@@ -6,7 +6,7 @@
 /*   By: zkerkeb <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 21:06:20 by zkerkeb           #+#    #+#             */
-/*   Updated: 2015/12/10 22:05:57 by zkerkeb          ###   ########.fr       */
+/*   Updated: 2015/12/14 16:08:22 by zkerkeb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,11 @@ char ***cara_malloc(char ***tab, int nt)
 	i = 0;
 	s = 0;
 	h = 0;
-	while(i <= (nt * 4))
+	while(i <= (nt * 5))
 	{
 		tab[s][h] = (char *)malloc(sizeof(char) * 5);
-		printf("%d/%d/%d  ", s,h, i);
+	//	printf("%d/%d/%d  ", s,h, i);
+	//	printf("\n");
 		i++;
 		h++;
 		if (i % 4 == 0)
@@ -74,18 +75,24 @@ char ***ft_split(char *str, char ***tab, int nt)
 	while (str[i] != '\0')
 	{
 		tab[s][h][v] = str[i];
+		//	printf("%c", str[i]);
+		//printf("%c", tab[s][h][v]);
+	//	printf(" %d/%d/%d  ", s,h, v);
 		v++;
 		i++;
-	//	printf("c", *tab[h][v]);
-		if (v == 3)
+		if (v == 5)
 		{
 			v = 0;
+			h++;
 		}
-		if (h == 3)
+		if (h == 4)
 		{
 			h = 0;
+			s++;
 		}
 	}
-  // tab[h] = NULL;
+	printf("%d",s);
+	s++;
+   tab[s][h] = NULL;
 	return (tab);
 }
