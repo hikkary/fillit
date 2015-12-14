@@ -23,4 +23,9 @@ void *ft_memcpy(void *dest, const void *src, size_t n);
 int	ft_try(char *str, int i, int l);
 void	ft_putstr(char const *s);
 char ***ft_split(char *str, char ***tab, int nt);
+int go_down(char *piece, int i, int count);
+int go_right(char *piece, int i, int count);
+int go_up(char *piece, int i, int count);
+int go_left(char *piece, int i, int count);
+int ft_test_form(char *piece);
 #endif
