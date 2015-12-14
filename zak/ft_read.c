@@ -6,7 +6,7 @@
 /*   By: zkerkeb <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 15:05:16 by zkerkeb           #+#    #+#             */
-/*   Updated: 2015/12/10 21:47:25 by zkerkeb          ###   ########.fr       */
+/*   Updated: 2015/12/14 20:06:28 by zkerkeb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,30 @@ int ft_check_open(int fd)
 {
 	if (fd == -1)
 	{
+		ft_putstr("error");
 		return(1);		
 	}
 	return (0);
 }
-
-
+/*
+void ft_tab3(char ***piece)
+{
+	while(piece)
+	{
+		printf("%c", piece[s][h][i]);
+		i++;
+		if(i == 5)
+		{
+			i = 0;
+			h++;
+		}
+		if (h == 4 && s <= nt)
+		{
+			h = 0;
+			s++;
+		}
+}
+*/
 int main(int argc, char **argv)
 {
 	int fd;
@@ -61,12 +79,17 @@ int main(int argc, char **argv)
 	int nt;
 	int i;
 	int h;
+	int s;
 
+	s = 0;
 	h = 0;
 	i = 0;
 
 	if (argc > 2 || argc == 1)
+	{
+		ft_putstr("error");
 		return(0);
+	}
 	piece = NULL;
 	fd = open(argv[1], O_RDONLY); 
 	ft_check_open(fd);
@@ -74,23 +97,11 @@ int main(int argc, char **argv)
 	tetris = (char *)malloc(sizeof(char *) * (nt + 1));
 	fd = open(argv[1], O_RDONLY); 
 	tetris = ft_write(fd, buf, tetris);
-//	printf("%s",tetris);
-	//printf("%d",ft_try(tetris, 0, 0));
+	ft_try(tetris,0,0);
+	ft_test_form(tetris); 
 	nt = nt / 21;
-//	printf("%d", nt);
 	piece = (char ***)malloc(sizeof(char **) * (nt + 1));
 	piece = ft_split(tetris, piece, nt);
-	printf("%d", nt);
 
-	while(piece)
-	{
-		printf("%s", piece[h][i]);
-		i++;
-		if(i == 4)
-		{
-			i = 0;
-			h++;
-		}
-	}
 	return(0);
 }

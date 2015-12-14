@@ -6,12 +6,11 @@
 /*   By: zkerkeb <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/08 20:41:57 by zkerkeb           #+#    #+#             */
-/*   Updated: 2015/12/09 15:11:31 by zkerkeb          ###   ########.fr       */
+/*   Updated: 2015/12/14 19:52:02 by zkerkeb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-//#include <stdio.h>
 
 int ft_try(char *str, int i, int l)
 {
@@ -23,12 +22,10 @@ int ft_try(char *str, int i, int l)
 		t++;
 		i++;
 	}
-//	printf("%d",t);
-//	printf("\n");
 	if (t != 4)
 	{
-	//	printf("error");
-		return (0);
+		ft_putstr("error");
+		return (1);
 	}
 	l++;
 	i++;
