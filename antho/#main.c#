@@ -183,7 +183,7 @@ int main()
       ft_putstr("error\n");
       return (0);
       }*/
-  chaine = ft_strdup("...#\n\n..##\n..#.\n....\n");  
+  chaine = ft_strdup("...#\n..##\n..#.\n....\n");  
   printf("%d", all_try(chaine));  
   return (0);
 }
